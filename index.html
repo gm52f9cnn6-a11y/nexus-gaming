@@ -160,7 +160,7 @@
       <div class="game-card">
         <h2>GTA 6</h2>
         <p>The next chapter of Grand Theft Auto.</p>
-        <button>VIEW</button>
+        <button onclick="openGame('gta6')">VIEW</button>
       </div>
 
       <div class="game-card">
@@ -181,7 +181,19 @@
 
   </div>
 
+<div id="gta6" class="page">
+  <h1>GTA 6</h1>
 
+  <p class="subtitle">GRAND THEFT AUTO VI</p>
+
+  <div class="game-info">
+    <p>
+      Welcome to the next chapter of Grand Theft Auto.
+    </p>
+
+    <button onclick="backToHub()">BACK TO NEXUS</button>
+  </div>
+</div>
   <footer>Made by french</footer>
 
 
@@ -211,6 +223,21 @@
       });
 
     });
+    function openGame(game) {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById(game).classList.add("active");
+}
+
+function backToHub() {
+  document.querySelectorAll(".page").forEach(function(page) {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("hub").classList.add("active");
+}
   </script>
 
 </body>
