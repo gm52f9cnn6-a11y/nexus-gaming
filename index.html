@@ -195,7 +195,7 @@
       <div class="game-card">
         <h2>THE ELDER SCROLLS VI</h2>
         <p>Something legendary is coming.</p>
-        <button>LOCKED</button>
+        <button onclick="playLockedSound()">LOCKED</button>
       </div>
 
     </div>
@@ -271,6 +271,10 @@ function backToHub() {
   });
 
   document.getElementById("hub").classList.add("active");
+}
+    function playLockedSound() {
+  const sound = new Audio("mixkit-glitch-static-1457.wav");
+  sound.play();
 }
   </script>
 
