@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NEXUS Gaming</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050509;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 40%, #351060 0%, transparent 35%),
+        linear-gradient(135deg, #050509, #10051b);
+      z-index: -1;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    .logo {
+      font-size: clamp(60px, 18vw, 160px);
+      font-weight: 900;
+      letter-spacing: 12px;
+      text-shadow:
+        0 0 15px #8b3dff,
+        0 0 40px #6a1bff;
+    }
+
+    .subtitle {
+      letter-spacing: 6px;
+      opacity: 0.7;
+    }
+
+    button {
+      padding: 14px 40px;
+      margin-top: 20px;
+      border: 1px solid #8b3dff;
+      border-radius: 5px;
+      background: transparent;
+      color: white;
+      font-size: 15px;
+      letter-spacing: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #8b3dff;
+      box-shadow: 0 0 30px #8b3dff;
+      transform: scale(1.05);
+    }
+
+    #hub {
+      justify-content: flex-start;
+      padding-top: 70px;
+    }
+
+    #hub h1 {
+      font-size: 55px;
+      letter-spacing: 10px;
+      margin: 0;
+      text-shadow: 0 0 30px #8b3dff;
+    }
+
+    .games {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 40px;
+    }
+
+    .game-card {
+      width: 280px;
+      min-height: 220px;
+      padding: 30px 20px;
+      border: 1px solid #8b3dff55;
+      border-radius: 10px;
+      background: #0d0915cc;
+      box-shadow: 0 0 25px #6a1bff15;
+      transition: 0.3s;
+    }
+
+    .game-card:hover {
+      transform: translateY(-8px);
+      border-color: #8b3dff;
+      box-shadow: 0 0 30px #6a1bff55;
+    }
+
+    .game-card h2 {
+      letter-spacing: 4px;
+    }
+
+    .game-card p {
+      letter-spacing: 1px;
+      line-height: 1.6;
+      opacity: 0.7;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 2px;
+      opacity: 0.45;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="home" class="page active">
+    <div class="logo">NEXUS</div>
+
+    <p class="subtitle">ENTER THE UNKNOWN</p>
+
+    <button id="enterBtn">ENTER</button>
+  </div>
+
+
+  <div id="hub" class="page">
+
+    <h1>NEXUS GAMING</h1>
+
+    <p class="subtitle">GAMES // NEWS // COMMUNITY</p>
+
+    <div class="games">
+
+      <div class="game-card">
+        <h2>GTA 6</h2>
+        <p>The next chapter of Grand Theft Auto.</p>
+        <button>VIEW</button>
+      </div>
+
+      <div class="game-card">
+        <h2>BLACK OPS 7</h2>
+        <p>Enter the next Black Ops experience.</p>
+        <button>VIEW</button>
+      </div>
+
+      <div class="game-card">
+        <h2>THE ELDER SCROLLS VI</h2>
+        <p>Something legendary is coming.</p>
+        <button>LOCKED</button>
+      </div>
+
+    </div>
+
+    <button id="backBtn">BACK</button>
+
+  </div>
+
+
+  <footer>Made by french</footer>
+
+
+  <script>
+    window.addEventListener("load", function() {
+
+      const enterBtn = document.getElementById("enterBtn");
+      const backBtn = document.getElementById("backBtn");
+
+      const home = document.getElementById("home");
+      const hub = document.getElementById("hub");
+
+
+      enterBtn.addEventListener("click", function() {
+
+        home.classList.remove("active");
+        hub.classList.add("active");
+
+      });
+
+
+      backBtn.addEventListener("click", function() {
+
+        hub.classList.remove("active");
+        home.classList.add("active");
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
