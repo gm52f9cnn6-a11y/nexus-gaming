@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>NEXUS Gaming</title>
-
+.game-image {
+  width: min(90%, 700px);
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 25px 0;
+  box-shadow: 0 0 35px #6a1bff66;
+}
   <style>
     * {
       box-sizing: border-box;
@@ -159,7 +166,20 @@
 
       <div class="game-card">
         <h2>GTA 6</h2>
-        <p>The next chapter of Grand Theft Auto.</p>
+        <img
+  src="https://upload.wikimedia.org/wikipedia/en/4/4f/Grand_Theft_Auto_VI.png"
+  alt="Grand Theft Auto VI"
+  class="game-image"
+>
+
+<p>
+  Grand Theft Auto VI takes players to the state of Leonida
+  and the neon-soaked streets of Vice City.
+</p>
+
+<p>
+  <strong>Release date:</strong> May 26, 2026
+</p>
         <button onclick="openGame('gta6')">VIEW</button>
       </div>
 
